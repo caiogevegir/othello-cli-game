@@ -1,7 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "inc/player.h"
 #include "inc/board.h"
+
+void
+intro
+()
+{
+  puts("   ____________      ____ _____ ____  ____ ");
+  puts("  / ____/ ____/     / __ \\__  // __ \\/ __ \\");
+  puts(" / /   / / ________/ /_/ //_ </ / / / / / /");
+  puts("/ /___/ /_/ /_____/\\__, /__/ / /_/ / /_/ / ");
+  puts("\\____/\\____/      /____/____/\\____/\\____/ ");
+  system("pause");
+  system("cls");
+}
 
 int
 main 
@@ -13,6 +27,8 @@ main
   char strCoord[2];
   int o, n;
   MovementStatus mst = WAITING_FOR_INPUT;
+
+  intro();
 
   instantiateBoard(&b);
   instantiatePlayer(&user, (char*)"Foo", 'O', &humanInput);
