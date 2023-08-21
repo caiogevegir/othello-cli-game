@@ -119,6 +119,11 @@ capturePieces
   int i, j;
   int numCaptured = 0;
 
+  /*
+    Traverses each direction looking for flanks (ex.: OXXXXO -> OOOOOO)
+    I know this is a mess, but it works. Trust me ¯\_(ツ)_/¯
+  */
+
   // Check Horizontally Right →
   for ( i=1; b->table[c->y][c->x + i*2] == defPiece && (c->x + i*2)<20; i++ ) {}
   if ( (c->x + i*2)<20 && b->table[c->y][c->x + i*2] == atkPiece )

@@ -15,8 +15,8 @@ main
   MovementStatus mst = WAITING_FOR_INPUT;
 
   instantiateBoard(&b);
-  instantiatePlayer(&user, (char*)"Player", 'O', &humanInput);
-  instantiatePlayer(&computer, (char*)"Computer", 'X', &computerInput);
+  instantiatePlayer(&user, (char*)"Foo", 'O', &humanInput);
+  instantiatePlayer(&computer, (char*)"Bar", 'X', &computerInput);
 
   players[0] = &user;
   players[1] = &computer;
@@ -32,7 +32,7 @@ main
   {
     printf("  %c: %d\t%c: %d\n\n", user.piece, user.numPieces, computer.piece, computer.numPieces);
     printBoard(&b);
-    printf("%s's turn: ", players[o]->name);
+    printf("\n%s's turn [%c]: ", players[o]->name, players[o]->piece);
 
     while ( mst != VALID )
     {
